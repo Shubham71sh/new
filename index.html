@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Jadoo's 18th ✨</title>
+    
+    <!-- Google Fonts: Premium selection for a modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CUSTOM CURSOR -->
+    <div id="custom-cursor"></div>
+
+    <!-- 1. JADOO ALIEN LOADER -->
+    <div id="loading-screen">
+        <div class="alien-loader">🛸<br>👽</div>
+        <div class="loader-text">Summoning Jadoo from space... ✨</div>
+    </div>
+
+    <!-- 2. FLOATING VINYL MUSIC PLAYER -->
+    <div id="floating-music-player">
+        <div class="vinyl-record">📀</div>
+        <span>Play Magic</span>
+        <audio id="bg-music" loop>
+            <source src="assets/music/song.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <main id="main-content" class="hidden">
+        
+        <!-- 3. HERO SECTION -->
+        <section id="hero-section">
+            <div class="hero-bg-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                
+                <!-- Bday Elements -->
+                <div class="bday-element bday-1">🎈</div>
+                <div class="bday-element bday-2">🎁</div>
+                <div class="bday-element bday-3">🎂</div>
+                <div class="bday-element bday-4">✨</div>
+            </div>
+            <div class="hero-content">
+                <h2 class="hero-subtitle fade-up">Celebrating the one & only</h2>
+                <h1 class="hero-title slide-up">18th Birthday<br><span class="italic-highlight">Jadoo</span></h1>
+                <p class="hero-description fade-up">A digital scrapbook handcrafted for my favorite alien.</p>
+                <button id="scroll-down-btn" class="modern-btn fade-up">Enter the Universe ↓</button>
+            </div>
+        </section>
+
+        <!-- 4. THE BENTO BOX -->
+        <section id="bento-section">
+            <div class="section-heading">
+                <h2>The Jadoo Files 📂</h2>
+                <p>Everything that makes you, you.</p>
+            </div>
+            
+            <div class="bento-grid">
+                
+                <!-- Bento Item 1: Wide Photo Marquee -->
+                <div class="bento-item bento-wide bento-marquee-container">
+                    <div class="marquee-track">
+                        <div class="marquee-img" style="background-image: url('./WhatsApp\ Image\ 2026-05-10\ at\ 2.02.32\ PM.jpeg')"></div>
+                        <div class="marquee-img" style="background-image: url('./jadoo.jpeg')"></div>
+                        <div class="marquee-img" style="background-image: url('./WhatsApp\ Image\ 2026-05-10\ at\ 2.02.34\ PM.jpeg')"></div>
+                        <div class="marquee-img" style="background-image: url('./WhatsApp\ Image\ 2026-05-10\ at\ 2.03.50\ PM.jpeg')"></div>
+                        <!-- Duplicates for seamless looping -->
+                        <div class="marquee-img" style="background-image: url('./WhatsApp\ Image\ 2026-05-10\ at\ 2.02.33\ PM\ \(2\).jpeg')"></div>
+                        <div class="marquee-img" style="background-image: url('./jadoo mummy.jpeg')"></div>
+                        <div class="marquee-img" style="background-image: url('./jadoomar.jpeg')"></div>
+                        <div class="marquee-img" style="background-image: url('./jadoob.jpeg')"></div>
+                    </div>
+                    <div class="bento-label">Memory Archive</div>
+                </div>
+
+                <!-- Bento Item 2: Stat Card -->
+                <div class="bento-item bento-square stat-card">
+                    <div class="stat-icon">😭</div>
+                    <h3>Pro Overthinker</h3>
+                    <p>Level 99 unlocked</p>
+                </div>
+
+                <!-- Bento Item 3: Circular SVG Meter -->
+                <div class="bento-item bento-square meter-card">
+                    <div class="circular-progress" data-percentage="100">
+                        <svg viewBox="0 0 100 100">
+                            <circle class="bg-ring" cx="50" cy="50" r="40"></circle>
+                            <circle class="progress-ring" cx="50" cy="50" r="40"></circle>
+                        </svg>
+                        <div class="meter-icon">☀️</div>
+                    </div>
+                    <h3>Sunshine</h3>
+                    <p>Always radiating</p>
+                </div>
+
+                <!-- Bento Item 4: Stat Card -->
+                <div class="bento-item bento-square stat-card">
+                    <div class="stat-icon">👽</div>
+                    <h3>Alien Energy</h3>
+                    <p>Out of this world</p>
+                </div>
+
+                <!-- Bento Item 5: Circular SVG Meter -->
+                <div class="bento-item bento-square meter-card">
+                    <div class="circular-progress" data-percentage="85">
+                        <svg viewBox="0 0 100 100">
+                            <circle class="bg-ring" cx="50" cy="50" r="40"></circle>
+                            <circle class="progress-ring" cx="50" cy="50" r="40"></circle>
+                        </svg>
+                        <div class="meter-icon">💀</div>
+                    </div>
+                    <h3>Drama Capacity</h3>
+                    <p>High but cute</p>
+                </div>
+
+                <!-- Bento Item 6: Wide Quote -->
+                <div class="bento-item bento-wide quote-card">
+                    <h2>"Proof that chaos can actually look really cute."</h2>
+                    <p>- A verified fact ✨</p>
+                </div>
+                <div class="bento-item bento-wide quote-card">
+                    <h2>"Dil se soft, dimaag se thoda cartoon."</h2>
+                    <p>- Perfect combination ☁️💖</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. STORY SECTION (Normal Flowing Text) -->
+        <section id="story-section">
+            <div class="story-content">
+                <p class="story-text fade-up">Dear Jadoo,</p>
+                <p class="story-text fade-up">18 years of making life brighter.</p>
+                <p class="story-text fade-up">You genuinely make people happier just by existing.</p>
+                <p class="story-text fade-up">Life feels more fun, chaotic, and warm with you.</p>
+                <p class="story-text fade-up">Thank you for being my Jadoo 💖</p>
+            </div>
+        </section>
+
+        <!-- 5.5 EXTRA MEDIA SECTION -->
+        <section id="media-section">
+            <div class="section-heading">
+                <h2>Memory Vault 🎥</h2>
+                <p>More chaos, more cute moments.</p>
+            </div>
+            <div class="media-grid">
+                <!-- Add as many images as you want here -->
+                <div class="media-card fade-up"><img src="./WhatsApp Image 2026-05-10 at 2.02.32 PM.jpeg" alt="Memory"></div>
+                <div class="media-card fade-up"><img src="./WhatsApp Image 2026-05-10 at 2.02.33 PM (2).jpeg" alt="Memory"></div>
+                <div class="media-card fade-up"><img src="./WhatsApp Image 2026-05-10 at 2.02.34 PM.jpeg" alt="Memory"></div>
+                <div class="media-card fade-up"><img src="./WhatsApp Image 2026-05-10 at 2.03.50 PM.jpeg" alt="Memory"></div>
+                <!-- Add your video here -->
+                <div class="media-card video-card fade-up">
+                    <video controls loop>
+                        <source src="./jadoo1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="media-card video-card fade-up">
+                    <video controls loop>
+                        <source src="./jadoo V.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="media-card video-card fade-up">
+                    <video controls loop>
+                        <source src="./jadoo2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="media-card video-card fade-up">
+                    <video controls loop>
+                        <source src="./jadoo3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <div class="media-card fade-up"><img src="./jadoob.jpeg" alt="Memory"></div>
+                <div class="media-card fade-up"><img src="./jadoo.jpeg" alt="Memory"></div>
+                <div class="media-card fade-up"><img src="./jadoo mummy.jpeg" alt="Memory"></div>
+                <div class="media-card fade-up"><img src="./jadoomar.jpeg" alt="Memory"></div>
+            </div>
+        </section>
+
+        <!-- 5.8 CAKE CELEBRATION SECTION -->
+        <section id="cake-section">
+            <div class="cake-container fade-up">
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px; color: var(--accent);">Make a Wish, Jadoo! 🎂</h2>
+                <div class="interactive-cake" id="bday-cake">
+                    <div class="candle">
+                        <div class="flame" id="candle-flame"></div>
+                    </div>
+                    <div class="cake-tier top-tier"></div>
+                    <div class="cake-tier bottom-tier"></div>
+                </div>
+                <button id="blow-candle-btn" class="modern-btn">Blow the Candle 💨</button>
+                <p id="wish-text" class="hidden" style="margin-top: 20px; font-size: 1.5rem; font-weight: bold; color: var(--text-main);">Happy Birthday!! May all your wishes come true ✨💖</p>
+            </div>
+        </section>
+
+        <!-- 6. PREMIUM ENVELOPE -->
+        <section id="envelope-section">
+            <div class="envelope-wrapper">
+                <div id="premium-envelope" class="envelope-3d">
+                    <div class="env-front"></div>
+                    <div class="env-back"></div>
+                    <div class="env-flap"></div>
+                    <div class="env-seal">Tap</div>
+                    <div class="env-letter">
+                        <h3>Happy Birthday!</h3>
+                        <p>Never change who you are. The world needs your exact kind of magic. 👽✨</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. THE CLIMAX (Starry Night Transition) -->
+        <section id="finale-section">
+            <div class="dark-overlay"></div>
+            <div class="star-field"></div>
+            
+            <div class="finale-content">
+                <div class="glowing-moon"></div>
+                <h1 class="finale-title">Happy 18th Birthday,<br>Jadoo.</h1>
+                <p class="finale-message">Stay exactly the way you are.<br>Too rare to ever replace. 💫</p>
+                
+                <button id="ignite-btn" class="modern-btn light">Ignite the Sky ✨</button>
+                
+                <div class="final-signature hidden">
+                    <p>Made with chaos and bestfriend energy</p>
+                    <h3>— Yours Truly 💖</h3>
+                </div>
+            </div>
+            
+            <canvas id="confetti-canvas"></canvas>
+        </section>
+
+    </main>
+
+    <!-- Floating Background Particles Container -->
+    <div id="particle-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
