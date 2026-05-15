@@ -34,24 +34,50 @@
 
     <main id="main-content" class="hidden">
         
-        <!-- 3. HERO SECTION -->
+        <!-- 3. MAIN HERO SECTION -->
         <section id="hero-section">
             <div class="hero-bg-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
+                <!-- Multi-layer depth -->
+                <div class="hero-glow-blob blob-1"></div>
+                <div class="hero-glow-blob blob-2"></div>
+                <div class="hero-glow-blob blob-3"></div>
                 
-                <!-- Bday Elements -->
+                <div class="hero-gradient-overlay"></div>
+                
+                <!-- Floating memory objects -->
                 <div class="bday-element bday-1">🎈</div>
-                <div class="bday-element bday-2">🎁</div>
-                <div class="bday-element bday-3">🎂</div>
-                <div class="bday-element bday-4">✨</div>
+                <div class="bday-element bday-2">💖</div>
+                <div class="bday-element bday-3">✨</div>
+                <div class="bday-element bday-4">🎀</div>
+                <div class="bday-element bday-5">⭐</div>
+                
+                <div class="floating-word fw-1">still my favorite person</div>
+                <div class="floating-word fw-2">certified comfort human</div>
+                <div class="floating-word fw-3">too soft honestly</div>
+                <div class="floating-word fw-4">made with love</div>
+                <div class="floating-word fw-5">emotionally expensive</div>
+                <div class="floating-word fw-6">chaos but adorable</div>
             </div>
             <div class="hero-content">
-                <h2 class="hero-subtitle fade-up">Celebrating the one & only</h2>
-                <h1 class="hero-title slide-up">18th Birthday<br><span class="italic-highlight">Jadoo</span></h1>
-                <p class="hero-description fade-up">A digital scrapbook handcrafted for my favorite alien.</p>
-                <button id="scroll-down-btn" class="modern-btn fade-up">Enter the Universe ↓</button>
+                <h2 class="hero-subtitle fade-up-seq">Celebrating the one & only</h2>
+                <h1 class="hero-title fade-up-seq">18th Birthday<br><span class="italic-highlight jadoo-premium-glow">Jadoo</span></h1>
+                <p class="hero-description fade-up-seq">A tiny universe made for the softest chaos machine ever 💖</p>
+                
+                <!-- Premium Countdown Card -->
+                <div class="hero-countdown-card fade-up-seq">
+                    <div class="tape-corner tape-center"></div>
+                    <p class="countdown-heading">Birthday Energy Rising 🎂</p>
+                    <p class="countdown-sub">18 years of softness & chaos ✨</p>
+                    
+                    <div class="countdown-blocks">
+                        <div class="cd-block"><span id="cd-days">00</span><small>DAYS</small></div>
+                        <div class="cd-block"><span id="cd-hours">00</span><small>HOURS</small></div>
+                        <div class="cd-block"><span id="cd-minutes">00</span><small>MINS</small></div>
+                        <div class="cd-block"><span id="cd-seconds">00</span><small>SECS</small></div>
+                    </div>
+                </div>
+
+                <button id="scroll-down-btn" class="modern-btn premium-btn fade-up-seq">Enter Her Universe ✨</button>
             </div>
         </section>
 
@@ -81,43 +107,51 @@
                 </div>
 
                 <!-- Bento Item 2: Stat Card -->
-                <div class="bento-item bento-square stat-card">
-                    <div class="stat-icon">😭</div>
-                    <h3>Pro Overthinker</h3>
-                    <p>Level 99 unlocked</p>
+                <div class="bento-item bento-square stat-card" style="transform: rotate(-1.5deg);">
+                    <div class="tape-corner"></div>
+                    <div class="doodle doodle-star">✨</div>
+                    <div class="stat-icon">🚫</div>
+                    <h3>The Human version of 'Error 404'</h3>
+                    <p>Logic not found but still cute😊</p>
                 </div>
 
                 <!-- Bento Item 3: Circular SVG Meter -->
-                <div class="bento-item bento-square meter-card">
+                <div class="bento-item bento-square meter-card" style="transform: rotate(1deg);">
+                    <div class="tape-corner tape-right"></div>
+                    <div class="doodle doodle-heart">💖</div>
                     <div class="circular-progress" data-percentage="100">
                         <svg viewBox="0 0 100 100">
                             <circle class="bg-ring" cx="50" cy="50" r="40"></circle>
                             <circle class="progress-ring" cx="50" cy="50" r="40"></circle>
                         </svg>
-                        <div class="meter-icon">☀️</div>
+                        <div class="meter-icon">🧠</div>
                     </div>
-                    <h3>Sunshine</h3>
-                    <p>Always radiating</p>
+                    <h3>Ph.D. in Overthinking</h3>
+                    <p>Usne "Ok" bola...iska matlab vo mujhse nafrat karta hai?</p>
                 </div>
 
                 <!-- Bento Item 4: Stat Card -->
-                <div class="bento-item bento-square stat-card">
+                <div class="bento-item bento-square stat-card" style="transform: rotate(-2deg);">
+                    <div class="tape-corner tape-left"></div>
+                    <div class="doodle doodle-alien">🛸</div>
                     <div class="stat-icon">👽</div>
-                    <h3>Alien Energy</h3>
-                    <p>Out of this world</p>
+                    <h3 class="stat-title">Iska network hi alag h jadoo 👽</h3>
+                    <p class="stat-sub">Iske logi ka dharti se koi lena dena nahi hai</p>
                 </div>
 
-                <!-- Bento Item 5: Circular SVG Meter -->
-                <div class="bento-item bento-square meter-card">
+                <!-- Bento Item 5: Chaotic Card -->
+                <div class="bento-item bento-square meter-card chaotic-card" style="transform: rotate(1.5deg);">
+                    <div class="tape-corner tape-center"></div>
+                    <div class="doodle doodle-sparkle">✦</div>
                     <div class="circular-progress" data-percentage="85">
                         <svg viewBox="0 0 100 100">
                             <circle class="bg-ring" cx="50" cy="50" r="40"></circle>
                             <circle class="progress-ring" cx="50" cy="50" r="40"></circle>
                         </svg>
-                        <div class="meter-icon">💀</div>
+                        <div class="meter-icon">🙉</div>
                     </div>
-                    <h3>Drama Capacity</h3>
-                    <p>High but cute</p>
+                    <h3 class="stat-title">Sunti sab hai, samjhati kuch nahi🎭</h3>
+                    <p class="stat-sub">Free trial of "Acha,kya bola?"</p>
                 </div>
 
                 <!-- Bento Item 6: Wide Quote -->
@@ -130,6 +164,7 @@
                     <p>- Perfect combination ☁️💖</p>
                 </div>
             </div>
+            <div class="hidden-note" style="top: -20px; right: 5%; transform: rotate(10deg);">still my favorite person</div>
         </section>
 
         <!-- 5. STORY SECTION (Normal Flowing Text) -->
@@ -143,64 +178,229 @@
             </div>
         </section>
 
+        <!-- CHOOSE A MEMORY -->
+        <section id="choose-memory-section">
+            <div class="section-heading">
+                <h2>What should we relive today? 💖</h2>
+            </div>
+            <div class="memory-buttons fade-up">
+                <button class="memory-btn" data-filter="chaos">chaos</button>
+                <button class="memory-btn" data-filter="soft">soft moments</button>
+                <button class="memory-btn" data-filter="funny">funny memories</button>
+            </div>
+        </section>
+
+        <!-- FAKE CHAT SECTION -->
+        <section id="fake-chat-section">
+            <div class="chat-container fade-up">
+                <div class="chat-header">
+                    <div class="chat-avatar">👽</div>
+                    <div class="chat-info">
+                        <h4>Jadoo</h4>
+                        <span class="online-status">Online</span>
+                    </div>
+                </div>
+                <div class="chat-messages">
+                    <div class="message received">Tu pagal hai 😭<span class="timestamp">11:11 PM</span></div>
+                    <div class="message sent">Pata hai 💅<span class="timestamp">11:12 PM</span></div>
+                    <div class="message received">Still one of my favorite people btw.<span class="timestamp">11:15 PM</span></div>
+                    <div class="message sent">Aww shut up 😭<span class="timestamp">11:16 PM</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VOICE MESSAGE -->
+        <section id="voice-message-section">
+            <div class="voice-message-bubble fade-up">
+                <div class="play-btn">▶</div>
+                <div class="waveform">
+                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="voice-text">tap to hear something 💌</div>
+                <audio id="voice-audio" src="./assets/music/song.mp3"></audio> <!-- Mock audio -->
+            </div>
+            <div class="hidden-note" style="bottom: -20px; left: 10%; transform: rotate(-5deg);">you make life softer</div>
+        </section>
+
         <!-- 5.5 EXTRA MEDIA SECTION -->
         <section id="media-section">
             <div class="section-heading">
-                <h2>Memory Vault 🎥</h2>
+                <h2>Premium Scrapbook 📸</h2>
                 <p>More chaos, more cute moments.</p>
             </div>
             <div class="media-grid">
-                <!-- Add as many images as you want here -->
-                <div class="media-card fade-up"><img src="./WhatsApp Image 2026-05-10 at 2.02.32 PM.jpeg" alt="Memory"></div>
-                <div class="media-card fade-up"><img src="./WhatsApp Image 2026-05-10 at 2.02.33 PM (2).jpeg" alt="Memory"></div>
-                <div class="media-card fade-up"><img src="./WhatsApp Image 2026-05-10 at 2.02.34 PM.jpeg" alt="Memory"></div>
-                <div class="media-card fade-up"><img src="./WhatsApp Image 2026-05-10 at 2.03.50 PM.jpeg" alt="Memory"></div>
-                <!-- Add your video here -->
-                <div class="media-card video-card fade-up">
-                    <video controls loop>
-                        <source src="./jadoo1.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                
+                <!-- Polaroid Image Cards -->
+                <div class="polaroid-card fade-up">
+                    <div class="tape-corner"></div>
+                    <div class="polaroid-img"><img src="./WhatsApp Image 2026-05-10 at 2.02.32 PM.jpeg" alt="Memory"></div>
+                    <div class="polaroid-caption">this day was pure chaos 😭</div>
                 </div>
-                <div class="media-card video-card fade-up">
-                    <video controls loop>
-                        <source src="./jadoo V.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                <div class="polaroid-card fade-up" style="transform: rotate(2deg);">
+                    <div class="polaroid-img"><img src="./WhatsApp Image 2026-05-10 at 2.02.33 PM (2).jpeg" alt="Memory"></div>
+                    <div class="polaroid-caption">still my favorite moment</div>
                 </div>
-                <div class="media-card video-card fade-up">
-                    <video controls loop>
-                        <source src="./jadoo2.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                <div class="polaroid-card fade-up" style="transform: rotate(-3deg);">
+                    <div class="tape-corner"></div>
+                    <div class="polaroid-img"><img src="./WhatsApp Image 2026-05-10 at 2.02.34 PM.jpeg" alt="Memory"></div>
+                    <div class="polaroid-caption">evidence that she’s insane 💀</div>
                 </div>
-                <div class="media-card video-card fade-up">
-                    <video controls loop>
-                        <source src="./jadoo3.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                <div class="polaroid-card fade-up" style="transform: rotate(1deg);">
+                    <div class="polaroid-img"><img src="./WhatsApp Image 2026-05-10 at 2.03.50 PM.jpeg" alt="Memory"></div>
+                    <div class="polaroid-caption">you looked really pretty that day btw</div>
                 </div>
 
-                <div class="media-card fade-up"><img src="./jadoob.jpeg" alt="Memory"></div>
-                <div class="media-card fade-up"><img src="./jadoo.jpeg" alt="Memory"></div>
-                <div class="media-card fade-up"><img src="./jadoo mummy.jpeg" alt="Memory"></div>
-                <div class="media-card fade-up"><img src="./jadoomar.jpeg" alt="Memory"></div>
+                <!-- Video Cards (Cinematic Preview) -->
+                <div class="polaroid-card video-card fade-up">
+                    <div class="tape-corner"></div>
+                    <div class="polaroid-img video-thumbnail" data-video="./jadoo1.mp4">
+                        <div class="custom-play-btn">▶</div>
+                        <video loop muted class="preview-video">
+                            <source src="./jadoo1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="polaroid-caption">Core memory unlocked ✨</div>
+                </div>
+                <div class="polaroid-card video-card fade-up" style="transform: rotate(-1deg);">
+                    <div class="polaroid-img video-thumbnail" data-video="./jadoo V.mp4">
+                        <div class="custom-play-btn">▶</div>
+                        <video loop muted class="preview-video">
+                            <source src="./jadoo V.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="polaroid-caption">Absolute drama queen 👑</div>
+                </div>
+                <div class="polaroid-card video-card fade-up" style="transform: rotate(2deg);">
+                    <div class="tape-corner"></div>
+                    <div class="polaroid-img video-thumbnail" data-video="./jadoo2.mp4">
+                        <div class="custom-play-btn">▶</div>
+                        <video loop muted class="preview-video">
+                            <source src="./jadoo2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="polaroid-caption">Aesthetic vibes only 🌌</div>
+                </div>
+                <div class="polaroid-card video-card fade-up" style="transform: rotate(-2deg);">
+                    <div class="polaroid-img video-thumbnail" data-video="./jadoo3.mp4">
+                        <div class="custom-play-btn">▶</div>
+                        <video loop muted class="preview-video">
+                            <source src="./jadoo3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="polaroid-caption">Miss chaotic 💫</div>
+                </div>
+
+                <!-- More Polaroids -->
+                <div class="polaroid-card fade-up" style="transform: rotate(3deg);">
+                    <div class="polaroid-img"><img src="./jadoob.jpeg" alt="Memory"></div>
+                    <div class="polaroid-caption">A whole mood 💅</div>
+                </div>
+                <div class="polaroid-card fade-up">
+                    <div class="tape-corner"></div>
+                    <div class="polaroid-img"><img src="./jadoo.jpeg" alt="Memory"></div>
+                    <div class="polaroid-caption">Main character energy ✨</div>
+                </div>
+                <div class="polaroid-card fade-up" style="transform: rotate(-1deg);">
+                    <div class="polaroid-img"><img src="./jadoo mummy.jpeg" alt="Memory"></div>
+                    <div class="polaroid-caption">🥺🥺🥺</div>
+                </div>
+                <div class="polaroid-card fade-up" style="transform: rotate(2deg);">
+                    <div class="tape-corner"></div>
+                    <div class="polaroid-img"><img src="./jadoomar.jpeg" alt="Memory"></div>
+                    <div class="polaroid-caption">Precious moments 💖</div>
+                </div>
             </div>
+            <div class="hidden-note" style="top: -10px; right: 15%; transform: rotate(-8deg);">thanks for existing</div>
+        </section>
+
+        <!-- THINGS THAT REMIND ME OF YOU -->
+        <section id="reminders-section">
+            <div class="section-heading">
+                <h2>Things that remind me of you 🌷</h2>
+            </div>
+            <div class="floating-cards-container">
+                <div class="floating-card fade-up">sunsets</div>
+                <div class="floating-card fade-up">pink skies</div>
+                <div class="floating-card fade-up">stars</div>
+                <div class="floating-card fade-up">coffee</div>
+                <div class="floating-card fade-up">late night talks</div>
+                <div class="floating-card fade-up">sleepy mornings</div>
+                <div class="floating-card fade-up">soft songs</div>
+                <div class="floating-card fade-up">chaos</div>
+            </div>
+        </section>
+
+        <!-- MOOD THROUGH THE DAY -->
+        <section id="mood-timeline">
+            <div class="section-heading">
+                <h2>Mood through the day 🌤️</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item fade-up">
+                    <div class="time-icon">☀️</div>
+                    <div class="time-content">
+                        <h4>Morning Jadoo</h4>
+                        <p>cute & sleepy</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-up">
+                    <div class="time-icon">🌸</div>
+                    <div class="time-content">
+                        <h4>Afternoon Jadoo</h4>
+                        <p>chaotic & loud</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-up">
+                    <div class="time-icon">🌙</div>
+                    <div class="time-content">
+                        <h4>Night Jadoo</h4>
+                        <p>emotional philosopher</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MINI COMPLIMENT GENERATOR -->
+        <section id="compliment-generator">
+            <div class="generator-card fade-up">
+                <h2>Need a reminder? 🌸</h2>
+                <button id="generate-fact-btn" class="modern-btn">Generate Jadoo Fact ✨</button>
+                <div id="fact-display" class="fact-display hidden"></div>
+            </div>
+            <div class="hidden-note" style="bottom: 10px; right: 20%; transform: rotate(5deg);">you looked really cute that day btw</div>
         </section>
 
         <!-- 5.8 CAKE CELEBRATION SECTION -->
         <section id="cake-section">
-            <div class="cake-container fade-up">
-                <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px; color: var(--accent);">Make a Wish, Jadoo! 🎂</h2>
-                <div class="interactive-cake" id="bday-cake">
+            <div class="cake-container fade-up premium-cake-bg">
+                <div class="tape-corner tape-left"></div>
+                <div class="tape-corner tape-right"></div>
+                <div class="doodle doodle-star">✨</div>
+                <div class="doodle doodle-heart">💖</div>
+                
+                <h2 class="cake-title">Make a Wish, Jadoo! 🎂</h2>
+                
+                <div class="interactive-cake premium-3d-cake" id="bday-cake">
                     <div class="candle">
-                        <div class="flame" id="candle-flame"></div>
+                        <div class="flame glow-flicker" id="candle-flame"></div>
+                        <div class="smoke hidden" id="candle-smoke"></div>
                     </div>
-                    <div class="cake-tier top-tier"></div>
-                    <div class="cake-tier bottom-tier"></div>
+                    <div class="cake-tier top-tier">
+                        <div class="icing-drip drip-1"></div>
+                        <div class="icing-drip drip-2"></div>
+                        <div class="icing-drip drip-3"></div>
+                        <div class="sprinkles-overlay"></div>
+                    </div>
+                    <div class="cake-tier bottom-tier">
+                        <div class="icing-drip drip-4"></div>
+                        <div class="icing-drip drip-5"></div>
+                        <div class="icing-drip drip-6"></div>
+                        <div class="sprinkles-overlay"></div>
+                    </div>
                 </div>
-                <button id="blow-candle-btn" class="modern-btn">Blow the Candle 💨</button>
-                <p id="wish-text" class="hidden" style="margin-top: 20px; font-size: 1.5rem; font-weight: bold; color: var(--text-main);">Happy Birthday!! May all your wishes come true ✨💖</p>
+                
+                <button id="blow-candle-btn" class="modern-btn premium-btn cake-btn">Blow the Candle 💨</button>
+                <p id="wish-text" class="hidden wish-reveal-text">Happy Birthday!! May all your wishes come true ✨💖</p>
             </div>
         </section>
 
@@ -236,6 +436,12 @@
                     <p>Made with chaos and bestfriend energy</p>
                     <h3>— Yours Truly 💖</h3>
                 </div>
+
+                <div class="end-credits hidden">
+                    <p>Starring:<br><span>Jadoo ✨</span></p>
+                    <p>Directed by:<br><span>someone who cares a lot 💖</span></p>
+                    <p>Special thanks:<br><span>for existing</span></p>
+                </div>
             </div>
             
             <canvas id="confetti-canvas"></canvas>
@@ -245,6 +451,19 @@
 
     <!-- Floating Background Particles Container -->
     <div id="particle-container"></div>
+    
+    <!-- CAMERA FLASH -->
+    <div id="camera-flash"></div>
+
+    <!-- VIDEO MODAL -->
+    <div id="video-modal" class="hidden">
+        <div class="modal-close">×</div>
+        <div class="modal-content">
+            <video id="modal-video" controls>
+                <source src="" type="video/mp4">
+            </video>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

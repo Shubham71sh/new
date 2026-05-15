@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         floatingPlayer.style.opacity = '1';
                         floatingPlayer.style.transform = 'translateY(0)';
                     }
-                    document.querySelectorAll('#hero-section .fade-up, #hero-section .slide-up').forEach((el, index) => {
+                    document.querySelectorAll('#hero-section .fade-up, #hero-section .slide-up, #hero-section .fade-up-seq').forEach((el, index) => {
                         setTimeout(() => {
                             el.classList.add('visible');
                         }, index * 200);
@@ -108,8 +108,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.circular-progress').forEach(el => bentoObserver.observe(el));
 
+    // --- 5.5 Countdown Timer ---
+    const cdDays = document.getElementById('cd-days');
+    const cdHours = document.getElementById('cd-hours');
+    const cdMinutes = document.getElementById('cd-minutes');
+    const cdSeconds = document.getElementById('cd-seconds');
+    
+    if(cdDays && cdHours && cdMinutes && cdSeconds) {
+        function updateTimer() {
+            const now = new Date();
+            let targetDate = new Date(now.getFullYear(), 4, 27); // Month is 0-indexed, so 4 is May
+            
+            if(now > targetDate) {
+                targetDate.setFullYear(now.getFullYear() + 1);
+            }
+            
+            const diff = targetDate - now;
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const m = Math.floor((diff / 1000 / 60) % 60);
+            const s = Math.floor((diff / 1000) % 60);
+            
+            cdDays.innerText = d.toString().padStart(2, '0');
+            cdHours.innerText = h.toString().padStart(2, '0');
+            cdMinutes.innerText = m.toString().padStart(2, '0');
+            cdSeconds.innerText = s.toString().padStart(2, '0');
+        }
+        updateTimer();
+        setInterval(updateTimer, 1000);
+    }
+
     // --- 6. Story & Media Section (Fade Up) ---
-    const fadeElements = document.querySelectorAll('.story-text, .media-card');
+    const fadeElements = document.querySelectorAll('.story-text, .media-card, .polaroid-card, .floating-card, .timeline-item, .generator-card, .chat-container, .voice-message-bubble, .memory-buttons, .cake-container');
     const fadeObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if(entry.isIntersecting) {
@@ -159,17 +189,128 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if(finaleSection) finaleObserver.observe(finaleSection);
 
-    // --- 9. Ignite the Sky (Confetti) ---
+    // --- 9. Ignite the Sky (Confetti & Credits) ---
     const igniteBtn = document.getElementById('ignite-btn');
     const finalSignature = document.querySelector('.final-signature');
+    const endCredits = document.querySelector('.end-credits');
     
     if(igniteBtn) {
         igniteBtn.addEventListener('click', () => {
             // Keep button but change text to allow re-igniting
             igniteBtn.innerText = "Pop More Magic ✨";
             if(finalSignature) finalSignature.classList.add('show');
+            if(endCredits) {
+                setTimeout(() => endCredits.classList.add('show'), 3000);
+            }
             fireConfetti();
             fireImageConfetti();
+        });
+    }
+
+    // --- 9.5 Camera Flash Utility ---
+    function triggerCameraFlash() {
+        const flash = document.getElementById('camera-flash');
+        if(flash) {
+            flash.classList.add('flash-active');
+            setTimeout(() => flash.classList.remove('flash-active'), 100);
+        }
+    }
+
+    // --- 9.6 Choose Memory Buttons ---
+    const memoryBtns = document.querySelectorAll('.memory-btn');
+    const mediaSection = document.getElementById('media-section');
+    memoryBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            triggerCameraFlash();
+            if(mediaSection) {
+                setTimeout(() => {
+                    mediaSection.scrollIntoView({ behavior: 'smooth' });
+                }, 300);
+            }
+        });
+    });
+
+    // --- 9.7 Voice Message Player ---
+    const voiceBubble = document.querySelector('.voice-message-bubble');
+    const voiceAudio = document.getElementById('voice-audio');
+    const voiceText = document.querySelector('.voice-text');
+    let isVoicePlaying = false;
+    
+    if(voiceBubble && voiceAudio) {
+        voiceBubble.addEventListener('click', () => {
+            if(isVoicePlaying) {
+                voiceAudio.pause();
+                voiceBubble.classList.remove('playing');
+                if(voiceText) voiceText.innerText = "tap to hear something 💌";
+            } else {
+                voiceAudio.play().catch(e => console.log('Audio error:', e));
+                voiceBubble.classList.add('playing');
+                if(voiceText) voiceText.innerText = "playing...";
+            }
+            isVoicePlaying = !isVoicePlaying;
+        });
+        voiceAudio.addEventListener('ended', () => {
+            isVoicePlaying = false;
+            voiceBubble.classList.remove('playing');
+            if(voiceText) voiceText.innerText = "tap to hear something 💌";
+        });
+    }
+
+    // --- 9.8 Compliment Generator ---
+    const generateBtn = document.getElementById('generate-fact-btn');
+    const factDisplay = document.getElementById('fact-display');
+    const jadooFacts = [
+        "Universe's favorite ✨",
+        "Certified comfort person 💖",
+        "Too cute for legal limits 🥺",
+        "Professional overthinker 🧠",
+        "Emotional support human 🌷",
+        "Certified chaos generator 🌪️",
+        "Looks cute even when mad 😠",
+        "100% Alien energy 👽"
+    ];
+    
+    if(generateBtn && factDisplay) {
+        generateBtn.addEventListener('click', () => {
+            generateBtn.innerText = "Another one! ✨";
+            factDisplay.classList.remove('hidden');
+            
+            // Animation reset trick
+            factDisplay.style.animation = 'none';
+            factDisplay.offsetHeight; /* trigger reflow */
+            factDisplay.style.animation = null;
+            
+            const randomFact = jadooFacts[Math.floor(Math.random() * jadooFacts.length)];
+            factDisplay.innerText = randomFact;
+        });
+    }
+
+    // --- 9.9 Video Modal ---
+    const videoThumbnails = document.querySelectorAll('.video-thumbnail');
+    const videoModal = document.getElementById('video-modal');
+    const modalVideo = document.getElementById('modal-video');
+    const modalClose = document.querySelector('.modal-close');
+    
+    videoThumbnails.forEach(thumb => {
+        thumb.addEventListener('click', () => {
+            const videoSrc = thumb.getAttribute('data-video');
+            if(videoSrc && videoModal && modalVideo) {
+                modalVideo.src = videoSrc;
+                videoModal.classList.remove('hidden');
+                modalVideo.play().catch(e => console.log(e));
+            }
+        });
+    });
+    
+    if(modalClose && videoModal && modalVideo) {
+        const closeModal = () => {
+            videoModal.classList.add('hidden');
+            modalVideo.pause();
+            modalVideo.currentTime = 0;
+        };
+        modalClose.addEventListener('click', closeModal);
+        videoModal.addEventListener('click', (e) => {
+            if(e.target === videoModal) closeModal();
         });
     }
 
@@ -324,14 +465,75 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 12. Cake Celebration Logic ---
     const blowBtn = document.getElementById('blow-candle-btn');
     const flame = document.getElementById('candle-flame');
+    const smoke = document.getElementById('candle-smoke');
     const wishText = document.getElementById('wish-text');
+    const cakeContainer = document.querySelector('.cake-container');
+    const cake = document.getElementById('bday-cake');
+    
+    const randomWishes = [
+        "Happy Birthday!! May all your wishes come true ✨💖",
+        "+100 happiness unlocked ✨",
+        "Birthday magic successfully activated 💖",
+        "Universe sending extra love today 🌸",
+        "Certified cutest human alive 🎂",
+        "Main character energy detected ✨",
+        "Today feels softer because of you 💫"
+    ];
+
     if(blowBtn && flame && wishText) {
         blowBtn.addEventListener('click', () => {
-            flame.style.opacity = '0';
+            // Fix animation overriding opacity by setting display to none
+            flame.style.animation = 'none';
+            flame.style.display = 'none';
+            
+            if(smoke) {
+                smoke.classList.remove('hidden');
+                setTimeout(() => smoke.classList.add('hidden'), 3000);
+            }
+            
+            if(cake) {
+                cake.style.transform = 'scale(1.05)';
+                setTimeout(() => cake.style.transform = 'scale(1)', 200);
+            }
+            
+            const randomWish = randomWishes[Math.floor(Math.random() * randomWishes.length)];
+            wishText.innerText = randomWish;
+            
             wishText.classList.remove('hidden');
             wishText.classList.add('visible');
             blowBtn.innerText = "Yay! 🥳";
             fireConfetti(); 
+            
+            triggerMemoryExplosion(cakeContainer);
         });
+    }
+
+    function triggerMemoryExplosion(container) {
+        if(!container) return;
+        const memoryIcons = ['✨', '💖', '🌸', '🎈', '⭐', '🎀'];
+        for(let i=0; i<15; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('memory-particle');
+            particle.innerText = memoryIcons[Math.floor(Math.random() * memoryIcons.length)];
+            
+            const angle = Math.random() * Math.PI * 2;
+            const velocity = Math.random() * 150 + 50;
+            const tx = Math.cos(angle) * velocity;
+            const ty = Math.sin(angle) * velocity - 100;
+            const rot = Math.random() * 360 - 180;
+            
+            particle.style.setProperty('--tx', `${tx}px`);
+            particle.style.setProperty('--ty', `${ty}px`);
+            particle.style.setProperty('--rot', `${rot}deg`);
+            
+            particle.style.left = '50%';
+            particle.style.top = '50%';
+            
+            container.appendChild(particle);
+            
+            setTimeout(() => {
+                if(particle.parentNode) particle.remove();
+            }, 1000);
+        }
     }
 });
